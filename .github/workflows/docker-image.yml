@@ -3,14 +3,10 @@ name: Docker Image CI
 on:
   workflow_dispatch:
     inputs:
-      DOCKER_REPOSITORY:
-        description: 'Provide the docker repository name'     
-        required: true
-        default: 'kallor/test'
       IMAGE_TAG:
         description: 'Provide the docker image tag'     
         required: true
-        default: 'latest'
+        default: 'kallor/test:latest'
 
 jobs:
 
@@ -40,4 +36,4 @@ jobs:
         with:
           context: ./calculator
           push: true
-          tags: ${{ github.event.inputs.DOCKER_REPOSITORY }}:${{ github.event.inputs.IMAGE_TAG }}
+          tags: ${{ github.event.inputs.IMAGE_TAG }}
