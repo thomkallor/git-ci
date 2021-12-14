@@ -7,6 +7,7 @@ on:
         description: 'Provide the docker image tag'     
         required: true
         default: 'kallor/test:latest'
+        
 
 jobs:
 
